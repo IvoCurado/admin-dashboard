@@ -153,6 +153,8 @@ html {
   /** Sizes **/
   --main-header-size: 20px;
   --sidebar-text-size: 16px;
+  --content-text-size: 14px;
+  --small-text-size: 14px;
 }
 
 .white-icon {
@@ -163,7 +165,7 @@ body {
 }
 .container {
   display: grid;
-  grid-template: 140px 1fr / minmax(200px, 1fr) minmax(300px, 4fr);
+  grid-template: 180px 1fr / minmax(200px, 1fr) minmax(300px, 4fr);
   height: 100%;
 }
 
@@ -197,13 +199,13 @@ body {
 .sidebar button {
   display: flex;
   width: 100%;
+  padding: 4px 10px;
   background-color: transparent;
   color: white;
-  gap: 20px;
-  font-size: var(--sidebar-text-size);
-  padding: 4px 10px;
   border: none;
   font-weight: bold;
+  gap: 20px;
+  font-size: var(--sidebar-text-size);
   padding: 10px 25px;
   align-items: center;
 }
@@ -212,12 +214,84 @@ body {
   background-color: var(--secondary-color);
 }
 
+.header {
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: space-between;
+  }
+
+  .top {
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-grow: 1;
+
+      input {
+        border: none;
+        background-color: var(--secondary-color);
+        border-radius: 10px;
+        flex-grow: 1;
+        padding: 4px;
+        &:focus-visible {
+          outline: none;
+          border: 1px var(--main-color) solid;
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: var(--content-text-size);
+    }
+  }
+
+  .sub {
+    .left {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        :first-child {
+          font-size: var(--small-text-size);
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      button {
+        background-color: var(--main-color);
+        color: white;
+        border: none;
+        font-weight: bold;
+        padding: 6px 12px;
+        border-radius: 14px;
+      }
+    }
+  }
+}
+
 .main-button {
   &:hover {
     cursor: pointer;
-    background-color: var(--main-color-darker);
+    background-color: var(--main-color-darker) !important;
   }
   &:active {
-    background-color: var(--main-color-darkest);
+    background-color: var(--main-color-darkest) !important;
   }
 }
