@@ -128,7 +128,7 @@ table {
 
 html {
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 *,
 *:before,
@@ -136,4 +136,88 @@ html {
   box-sizing: inherit;
 }
 
+html {
+  height: 100%;
+  width: 100%;
+}
+
 /** Reset until here **/
+
+:root {
+  /** Colors **/
+  --main-color: #1992d4;
+  --main-color-darker: #1579af;
+  --main-color-darkest: #104a69;
+
+  --secondary-color: #e2e8f0;
+  /** Sizes **/
+  --main-header-size: 20px;
+  --sidebar-text-size: 16px;
+}
+
+.white-icon {
+  fill: white;
+}
+body {
+  height: 100%;
+}
+.container {
+  display: grid;
+  grid-template: 140px 1fr / minmax(200px, 1fr) minmax(300px, 4fr);
+  height: 100%;
+}
+
+.sidebar {
+  background-color: var(--main-color);
+  color: white;
+  grid-row: 1 / 3;
+  font: bold;
+}
+
+.sidebar > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar > .title {
+  font-weight: bold;
+  font-size: var(--main-header-size);
+  padding: 10px;
+}
+
+.sidebar > .options {
+  display: flex;
+  flex-direction: column;
+  ul {
+    width: 100%;
+  }
+}
+.sidebar button {
+  display: flex;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  gap: 20px;
+  font-size: var(--sidebar-text-size);
+  padding: 4px 10px;
+  border: none;
+  font-weight: bold;
+  padding: 10px 25px;
+  align-items: center;
+}
+
+.content {
+  background-color: var(--secondary-color);
+}
+
+.main-button {
+  &:hover {
+    cursor: pointer;
+    background-color: var(--main-color-darker);
+  }
+  &:active {
+    background-color: var(--main-color-darkest);
+  }
+}
